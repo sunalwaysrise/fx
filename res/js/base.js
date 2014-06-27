@@ -5,7 +5,8 @@ window.scrollTo(0,0);
 try{document.domain='cp2y.com';}catch(e){};
 var WebAppUrl={
 		APP : 'http://t.cp2y.com/',
-		JS_URL:"/res/js/play/"
+		//JS_URL:"http://res2.cp2y.com/h5/fx/res/js/play/"
+		JS_URL:"res/js/play/"
 	},Dom={L:$("#loading"),M:$("#moreLock"),C:$("#moreList"),B:$("#moreBtn"),D:$("#canvas")},cp2y={};
 Dom.L.hide();
 cp2y.util={
