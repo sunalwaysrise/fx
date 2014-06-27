@@ -15,13 +15,12 @@ _.a0={
 		if(this.Data){
 			this.set(this.Data);
 		}else{
-			alert(1)
 			$.ajax({
 				url:WebAppUrl.APP+"xssq/",
 				data:{fetchSize:this.fetchSize},
 				beforeSend:function(){Dom.L.show();},
 				success:function(data){
-					alert(typeof data)
+					//alert(typeof data)
 					Dom.L.hide();
 					cp2y.main.Data=data;
 					cp2y.main.set(data);
@@ -32,10 +31,10 @@ _.a0={
 	},
 	set:function(data){
 		var D=data.datalist,i,len,html=[],red0=[],red=[],blue0=[],blue=[],tmpCode,t1,t2,j,len2,tI,lq=[],redYL=[],blueYL=[];
-		Dom.D.addClass('ssqFx').css({'width':1445,'height':25*(D.length+1)+120});
+		Dom.D.addClass('ssqFx').css({'width':1405,'height':25*(D.length+1)+120});
 		i=1;for(i;i<34;i++){red0.push('<em><i>'+i.addZero()+'</i></em>');}
 		i=1;for(i;i<17;i++){blue0.push('<em><i>'+i.addZero()+'</i></em>');}
-		html.push('<div class="l1"><div class="issu">期号</div><div class="code">开奖号码</div><div class="red">'+red0.join('')+'</div><div class="blue">'+blue0.join('')+'</div></div>');
+		html.push('<div class="l1"><div class="issu">期号</div><div class="red ml40">'+red0.join('')+'</div><div class="blue">'+blue0.join('')+'</div><div class="code">开奖号码</div></div>');
 		i=D.length-1;
 		for(i;i>=0;i--){
 			tmpCode=D[i].drawNumber.split('#');
@@ -44,7 +43,7 @@ _.a0={
 			redYL=D[i].missCombine.split('#')[0].split(',');
 			blueYL=D[i].missCombine.split('#')[1].split(',');
 			tmpCode='<a class="red">'+t1.join('</a><a class="red">')+'<a class="blue">'+t2+'</a>';
-			html.push('<div class="l1"><div class="issu">'+D[i].issue+'</div><div class="code">'+tmpCode+'</div>');
+			html.push('<div class="l1"><div class="issu">'+D[i].issue.substr(4,3)+'</div>');
 			j=1;red=[];blue=[];tI=0;
 			for(j;j<34;j++){
 				if(t1[tI]==j.addZero()){
@@ -62,12 +61,12 @@ _.a0={
 					blue.push('<em><span>'+blueYL[j-1]+'</span></em>');
 				}
 			}
-			html.push('<div class="red">'+red.join('')+'</div><div class="blue">'+blue.join('')+'</div></div>');
+			html.push('<div class="red ml40">'+red.join('')+'</div><div class="blue">'+blue.join('')+'</div><div class="code">'+tmpCode+'</div></div>');
 			lq.push(t2);
 		}
-		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:494px"></div>');
-		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:769px"></div>');
-		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:1044px"></div>');
+		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:315px"></div>');
+		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:590px"></div>');
+		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:865px"></div>');
 		html.push('<canvas id="lines1" width="400" height="'+25*D.length+'"></canvas>');
 		html.push('<div class="l1 mt10 btb"><div class="code">'+this.fetchSize+'期遗漏</div><div class="red">'+red0.join('')+'</div><div class="blue">'+blue0.join('')+'</div></div>');
 		html.push('<div class="l1"><div class="code">出现次数</div><div class="red"><em><span>'+data.redappearcount.join('</span></em><em><span>')+'</span></em></div><div class="blue"><em><span>'+data.blueappearcount.join('</span></em><em><span>')+'</span></em></div></div>');
@@ -115,14 +114,14 @@ _.a1={
 		i=r6.min();len=r6.max();
 		for(i;i<=len;i++){w6.push(i);}
 		var w=(w1.length+w2.length+w3.length+w4.length+w5.length+w6.length)*25+6;
-		Dom.D.css({'width':80+w,'height':25*(D.length+2)});
-		html.push('<div class="l1"><div class="issu2"></div><div style="width:'+(w1.length*25)+'px;">第一位</div>');
+		Dom.D.css({'width':40+w,'height':25*(D.length+2)});
+		html.push('<div class="l1"><div class="issu"></div><div class="ml40" style="width:'+(w1.length*25)+'px;">第一位</div>');
 		html.push('<div style="width:'+(w2.length*25)+'px;">第二位</div>');
 		html.push('<div style="width:'+(w3.length*25)+'px;">第三位</div>');
 		html.push('<div style="width:'+(w4.length*25)+'px;">第四位</div>');
 		html.push('<div style="width:'+(w5.length*25)+'px;">第五位</div>');
 		html.push('<div style="width:'+(w6.length*25)+'px;">第六位</div></div>');
-		html.push('<div class="l1"><div class="issu2">期数</div><div><em>'+w1.join('</em><em>')+'</em></div>');
+		html.push('<div class="l1"><div class="issu">期数</div><div class="ml40"><em>'+w1.join('</em><em>')+'</em></div>');
 		html.push('<div><em>'+w2.join('</em><em>')+'</em></div>');
 		html.push('<div><em>'+w3.join('</em><em>')+'</em></div>');
 		html.push('<div><em>'+w4.join('</em><em>')+'</em></div>');
@@ -132,8 +131,8 @@ _.a1={
 		var j,len2,t=[];
 		for(i;i<len;i++){
 			t=[];j=r1.min();len2=r1.max();
-			t.push('<div class="l1"><div class="issu2">'+D[len-1-i].issue+'</div>');
-			t.push('<div class="w1">');
+			t.push('<div class="l1"><div class="issu">'+D[len-1-i].issue.substr(4,3)+'</div>');
+			t.push('<div class="w1 ml40">');
 			for(j;j<=len2;j++){
 				if(j==r1[i]){
 					t.push('<em><i>'+j.addZero()+'</i></em>');
@@ -195,11 +194,11 @@ _.a1={
 			t.push('</div>');
 			html.push(t.join(''));
 		}
-		html.push('<canvas id="lineDw1" style="left:80px" width="'+w1.length*25+'" height="'+25*D.length+'"></canvas>');
-		html.push('<canvas id="lineDw2" style="left:'+(80+(w1.length)*25)+'px"  width="'+w2.length*25+'" height="'+25*D.length+'"></canvas>');
-		html.push('<canvas id="lineDw3" style="left:'+(81+(w1.length+w2.length)*25)+'px"  width="'+w3.length*25+'" height="'+25*D.length+'"></canvas>');
-		html.push('<canvas id="lineDw4" style="left:'+(82+(w1.length+w2.length+w3.length)*25)+'px"  width="'+w4.length*25+'" height="'+25*D.length+'"></canvas>');
-		html.push('<canvas id="lineDw5" style="left:'+(83+(w1.length+w2.length+w3.length+w4.length)*25)+'px"  width="'+w5.length*25+'" height="'+25*D.length+'"></canvas>');
+		html.push('<canvas id="lineDw1" style="left:40px" width="'+w1.length*25+'" height="'+25*D.length+'"></canvas>');
+		html.push('<canvas id="lineDw2" style="left:'+(40+(w1.length)*25)+'px"  width="'+w2.length*25+'" height="'+25*D.length+'"></canvas>');
+		html.push('<canvas id="lineDw3" style="left:'+(41+(w1.length+w2.length)*25)+'px"  width="'+w3.length*25+'" height="'+25*D.length+'"></canvas>');
+		html.push('<canvas id="lineDw4" style="left:'+(42+(w1.length+w2.length+w3.length)*25)+'px"  width="'+w4.length*25+'" height="'+25*D.length+'"></canvas>');
+		html.push('<canvas id="lineDw5" style="left:'+(43+(w1.length+w2.length+w3.length+w4.length)*25)+'px"  width="'+w5.length*25+'" height="'+25*D.length+'"></canvas>');
 		html.push('<canvas id="lineDw6" style="right:1px"  width="'+w6.length*25+'" height="'+25*D.length+'"></canvas>');
 		Dom.D.html(html.join(''));
 		var ctx=document.getElementById("lineDw1").getContext('2d'),m=12.5,mm;
@@ -288,8 +287,8 @@ _.a2={
 	canvas:_.a0.canvas,
 	set:function(data){
 		var D=data.datalist,i,j,len,html=[],red=[],blue,sum=[],tSum;
-		html.push('<div class="l1"><div class="issu"></div><div class="code"></div><div class="hz">和值</div><div class="hz2"></div></div>');
-		html.push('<div class="l1"><div class="issu">期号</div><div class="code">开奖号码</div><div class="hz"><a>21</a><a>10%</a><a>20%</a><a>30%</a><a>40%</a><a>50%</a><a>60%</a><a>70%</a><a>80%</a><a>90%</a><a>183</a></div><div class="hz2">和值</div></div>');
+		html.push('<div class="l1"><div class="issu"></div><div class="hz ml40">和值</div><div class="hz2"></div><div class="code"></div></div>');
+		html.push('<div class="l1"><div class="issu">期号</div><div class="hz ml40"><a>21</a><a>10%</a><a>20%</a><a>30%</a><a>40%</a><a>50%</a><a>60%</a><a>70%</a><a>80%</a><a>90%</a><a>183</a></div><div class="hz2">和值</div><div class="code">开奖号码</div></div>');
 		i=D.length-1;
 		for(i;i>=0;i--){
 			red=D[i].drawNumber.split("#")[0].split(',');
@@ -299,9 +298,9 @@ _.a2={
 				tSum+=Number(red[j]);
 			}
 			sum.push(tSum);
-			html.push('<div class="l1"><div class="issu">'+D[i].issue+'</div><div class="code"><a class="red">'+red.join('</a><a class="red">')+'<a class="blue">'+blue+'</a></div><div class="hz"><b style="left:'+((tSum-15)/183)*100+'%">'+tSum+'</b><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a></div><div class="hz2">'+tSum+'</div></div>');
+			html.push('<div class="l1"><div class="issu">'+D[i].issue.substr(4,3)+'</div><div class="hz ml40"><b style="left:'+((tSum-15)/183)*100+'%">'+tSum+'</b><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a></div><div class="hz2">'+tSum+'</div><div class="code"><a class="red">'+red.join('</a><a class="red">')+'<a class="blue">'+blue+'</a></div></div>');
 		}
-		Dom.D.addClass('ssqFx').css({'width':700,'height':25*(D.length+2)});
+		Dom.D.addClass('ssqFx').css({'width':661,'height':25*(D.length+2)});
 		Dom.D.html(html.join(''));
 		html.push('<canvas id="HeZhi" width="440" height="'+25*D.length+'"></canvas>');
 		Dom.D.html(html.join(''));

@@ -19,7 +19,7 @@ cp2y.main={
 		}
 		if(!o){
 			this.BT=cp2y.util.getArgs('bt');
-			$.getScript(WebAppUrl.JS_URL+this.BT+'.js',function(){
+			$.getScript(WebAppUrl.JS_URL+this.BT+'.js?v=20140627',function(){
 				$.extend(cp2y.main,_[play]);
 				_.top();
 				$("#name").html(_.name);
