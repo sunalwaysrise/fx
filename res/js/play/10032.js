@@ -15,11 +15,13 @@ _.a0={
 		if(this.Data){
 			this.set(this.Data);
 		}else{
+			alert(1)
 			$.ajax({
 				url:WebAppUrl.APP+"xssq/",
 				data:{fetchSize:this.fetchSize},
 				beforeSend:function(){Dom.L.show();},
 				success:function(data){
+					alert(typeof data)
 					Dom.L.hide();
 					cp2y.main.Data=data;
 					cp2y.main.set(data);
@@ -320,4 +322,3 @@ _.a2={
 };
 
 
-cp2y.main.init('a0');

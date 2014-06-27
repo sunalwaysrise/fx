@@ -242,4 +242,3 @@ _.a2={
 		ctx.stroke();
 	}
 };
-cp2y.main.init('a0');
