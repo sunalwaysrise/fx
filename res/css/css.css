@@ -70,7 +70,7 @@ body{color:#000;font-family:songti,YaHei,microsoft YaHei,Helvetica,Tahoma,sans-s
 .l1 .red em span{color:#966d6a;}
 .l1 .blue em{color:#2889EA;}
 .l1 .blue em span{color:#617b8c;}
-.l1 em i{width:20px;height:20px;text-align:center;line-height:20px;float:left;margin:2px;border-radius:10px;color:#fff;font-style:normal;background:#f30f30;}
+.l1 em i{width:20px;height:20px;text-align:center;line-height:20px;float:left;margin:2px;border-radius:10px;color:#fff;font-style:normal;background:#f30f30;position:relative;z-index:999;}
 .l1 .hz3 em i{margin:2px 10px;}
 .l1 .red em i{background:#f30f30;}
 .l1 .blue em i{background:#2889EA;}
