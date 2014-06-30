@@ -85,7 +85,7 @@ body{color:#000;font-family:songti,YaHei,microsoft YaHei,Helvetica,Tahoma,sans-s
 .hz{width:440px;text-align:center;position:relative;}
 .hz a{width:39px;height:24px;border-right:1px #ddd solid;float:left;text-align:center;}
 .hz a:last-child{border-right:none;}
-.hz b{width:30px;height:20px;position:absolute;top:2px;line-height:20px;text-align:center;background:rgb(188,109,109);color:#fff;font-weight:normal;}
+.hz b{width:30px;height:20px;position:absolute;top:2px;line-height:20px;text-align:center;background:rgb(188,109,109);color:#fff;font-weight:normal;z-index:999;}
 .hz2{width:39px;text-align:center;}
 #HeZhi{position:absolute;top:50px;left:40px;}
 .splitLine{position:absolute;top:0;width:1px;background:#000;}
