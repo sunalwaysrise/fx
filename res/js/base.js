@@ -5,43 +5,54 @@ window.scrollTo(0,0);
 try{document.domain='cp2y.com';}catch(e){};
 var WebAppUrl={
 		APP : 'http://t.cp2y.com/',
-		//JS_URL:"http://res2.cp2y.com/h5/fx/res/js/play/"
-		JS_URL:"res/js/play/"
+		JS_URL:"http://res2.cp2y.com/h5/fx/res/js/play/"
+		//JS_URL:"res/js/play/"
 	},Dom={L:$("#loading"),M:$("#moreLock"),C:$("#moreList"),B:$("#moreBtn"),D:$("#canvas")},cp2y={};
 Dom.L.hide();
 cp2y.util={
-	throttle:function(fn, delay, mustRunDelay) {
-		var timer = null;
-		var t_start;
-		return function() {
-			var context = this, args = arguments, t_curr = +new Date();
-			clearTimeout(timer);
-			if (!t_start) {
-				t_start = t_curr;
-			}
-			if (t_curr - t_start >= mustRunDelay) {
-				fn.apply(context, args);
-				t_start = t_curr;
-			} else {
-				timer = setTimeout(function() {
-					fn.apply(context, args);
-				}, delay);
-			}
-		}
-	},
-	getArgs:function(argName){
-		if(!argName){return false;}
-		var args = {},query = location.hash.substring(1),pairs = query.split("&");
-		for(var i = 0; i < pairs.length; i++) {
-			var pos = pairs[i].indexOf('=');
-			if (pos == -1) continue;
-			var argname = pairs[i].substring(0,pos),value = pairs[i].substring(pos+1);
-			value = decodeURIComponent(value);
-			if(argName==argname){
-				return value;
-			}
-		}
-	}
+  version:function(){
+    $.get(WebAppUrl.APP+"/",function(data){
+      if(data.flag==1){
+        if(data.version!=cp2y.version){
+          return cp2y.dialog.alert('请去下载最新版',function(){
+            location.href='/';
+          });
+        }
+      }
+    });
+  },
+  throttle:function(fn, delay, mustRunDelay) {
+    var timer = null;
+    var t_start;
+    return function() {
+      var context = this, args = arguments, t_curr = +new Date();
+      clearTimeout(timer);
+      if (!t_start) {
+          t_start = t_curr;
+      }
+      if (t_curr - t_start >= mustRunDelay) {
+          fn.apply(context, args);
+          t_start = t_curr;
+      } else {
+          timer = setTimeout(function() {
+              fn.apply(context, args);
+          }, delay);
+      }
+    }
+  },
+  getArgs:function(argName){
+    if(!argName){return false;}
+    var args = {},query = location.hash.substring(1),pairs = query.split("&");
+    for(var i = 0; i < pairs.length; i++) {
+      var pos = pairs[i].indexOf('=');
+      if (pos == -1) continue;
+      var argname = pairs[i].substring(0,pos),value = pairs[i].substring(pos+1);
+      value = decodeURIComponent(value);
+      if(argName==argname){
+          return value;
+      }
+    }
+  }
 };
 cp2y.dialog={
 	alert:function(x,fn){

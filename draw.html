@@ -11,10 +11,19 @@
 <body class="f8">
 <div id="loading"><div><a></a></div></div>
 <header class="header">
-	<a class="back" href="index.html"></a>
-	<h2 onclick="cp2y.main.toggle();"><b id="name"></b>-<span id="subName"></span></h2>
-	<a onclick="cp2y.main.toggle();" class="more" id="moreBtn"></a>
+  <a class="back" href="index.html"></a>
+  <h2 onclick="cp2y.main.toggle();"><b id="name"></b>-<span id="subName"></span><i class="more" id="moreBtn">&nbsp;</i></h2>
+  <a onclick="cp2y.main.openGuide();" class="rightBtn">投注</a>
 </header>
+<div id="downBox">
+  <h4>安装彩票2元即可购彩</h4>
+  <div>
+    <p></p>
+    <a href="#">立刻下载</a>
+    <a onlick="cp2y.main.closeGuide();">以后再说</a>
+  </div>
+</div>
+<div id="downLock" onclick="cp2y.main.closeGuide();"></div>
 <div id="moreLock" onclick="cp2y.main.toggle();"></div>
 <div id="moreList" onclick="cp2y.main.toggle();"><p id="moreBox"></p></div>
 <div id="main"><div id="canvas"></div></div>

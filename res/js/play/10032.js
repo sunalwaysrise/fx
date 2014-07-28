@@ -63,9 +63,19 @@ _.a0={
 			html.push('<div class="red ml40">'+red.join('')+'</div><div class="blue">'+blue.join('')+'</div><div class="code">'+tmpCode+'</div></div>');
 			lq.push(t2);
 		}
-		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:315px"></div>');
-		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:590px"></div>');
-		html.push('<div class="splitLine" style="height:'+(26*D.length-5)+'px;left:865px"></div>');
+		var red1=[],blue1=[];
+		i=1;
+		for(i;i<34;i++){
+			red1.push('<em class="btn"></em>');
+		}
+		i=1;
+		for(i;i<17;i++){
+			blue1.push('<em class="btn"></em>');
+		}
+		html.push('<div class="l1"><div class="issu">选号</div><div id="red" class="red ml40">'+red1.join('')+'</div><div id="blue" class="blue">'+blue1.join('')+'</div><div class="code" onclick="cp2y.main.submit();">去购买</div></div>');
+		html.push('<div class="splitLine" style="height:'+(27*D.length-10)+'px;left:315px"></div>');
+		html.push('<div class="splitLine" style="height:'+(27*D.length-10)+'px;left:590px"></div>');
+		html.push('<div class="splitLine" style="height:'+(27*D.length-10)+'px;left:865px"></div>');
 		html.push('<canvas id="lines1" width="400" height="'+25*D.length+'"></canvas>');
 		html.push('<div class="l1 mt10 btb"><div class="code">'+this.fetchSize+'期遗漏</div><div class="red">'+red0.join('')+'</div><div class="blue">'+blue0.join('')+'</div></div>');
 		html.push('<div class="l1"><div class="code">出现次数</div><div class="red"><em><span>'+data.redappearcount.join('</span></em><em><span>')+'</span></em></div><div class="blue"><em><span>'+data.blueappearcount.join('</span></em><em><span>')+'</span></em></div></div>');
@@ -85,6 +95,33 @@ _.a0={
 		ctx.moveTo(((lq[0]-1)*25)+m,12.5);
 		for(i;i<len;i++){ctx.lineTo(lq[i]*25-m,(i*25)+m);}
 		ctx.stroke();
+		$(".btn").click(function(){
+			var o=$(this);
+			if(o.children('i').length==0){
+				o.html('<i>'+($(this).index()+1).addZero()+'</i>');
+			}else{
+				o.html('');
+			}
+		});
+	},
+	submit:function(){
+		var red=$("#red em"),blue=$("#blue em"),i=0,r=[],b=[];
+		for(i;i<33;i++){
+			if(red.eq(i).html()){
+				r.push(i+1);
+			}
+		}
+		i=0;
+		for(i;i<16;i++){
+			if(blue.eq(i).html()){
+				b.push(i+1);
+			}
+		}
+		if( r.length==0 && b.length==0 ){
+			return false;
+		}else{
+			window.location.href="http://m.cp2y.com/lottery/10032?type=a0&r="+r.join(',')+"&b="+b.join(',');
+		}
 	}
 };
 

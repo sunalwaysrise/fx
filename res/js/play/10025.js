@@ -34,38 +34,43 @@ _.a0={
 		html.push('<div class="l1"><div class="issu"></div><div class="code3D ml40">第一位</div><div class="code3D">第二位</div><div class="code3D">第三位</div><div class="code2"></div></div>');
 		i=0;
 		for(i;i<10;i++){
-			tmp.push('<em><a class="red">'+i+'</a></em>');
+          tmp.push('<em><a class="red">'+i+'</a></em>');
 		}
 		tmp=tmp.join('');
 		html.push('<div class="l1"><div class="issu">期号</div><div class="code3D ml40">'+tmp+'</div><div class="code3D">'+tmp+'</div><div class="code3D">'+tmp+'</div><div class="code2">开奖号码</div></div>');
 		i=D.length-1;
 		for(i;i>=0;i--){
-			boll=[];
-			YL=D[i].miss.split('/');
-			t1=D[i].drawNumber.split(',');
-			html.push('<div class="l1"><div class="issu">'+D[i].issue.substr(2,3)+'</div>');
-			j=0;
-			w1.push(t1[0]);w2.push(t1[1]);w3.push(t1[2]);
-			for(j;j<3;j++){
-				if(j==0){
-					html.push('<div class="code3D ml40">');
-				}else{
-					html.push('<div class="code3D">');
-				}
-				YL2=YL[j].split(',');
-				k=0;
-				for(k;k<10;k++){
-					if(t1[j]==k){
-						tI++;
-						html.push('<em><i>'+k+'</i></em>');
-					}else{
-						html.push('<em><span>'+YL2[k]+'</span></em>');
-					}
-				}
-				html.push('</div>');
-			}
-			html.push('<div class="code2"><a>'+t1.join('</a><a>')+'</a></div></div>');
+          boll=[];
+          YL=D[i].miss.split('/');
+          t1=D[i].drawNumber.split(',');
+          html.push('<div class="l1"><div class="issu">'+D[i].issue.substr(2,3)+'</div>');
+          j=0;
+          w1.push(t1[0]);w2.push(t1[1]);w3.push(t1[2]);
+          for(j;j<3;j++){
+              if(j==0){
+                  html.push('<div class="code3D ml40">');
+              }else{
+                  html.push('<div class="code3D">');
+              }
+              YL2=YL[j].split(',');
+              k=0;
+              for(k;k<10;k++){
+                  if(t1[j]==k){
+                      tI++;
+                      html.push('<em><i>'+k+'</i></em>');
+                  }else{
+                      html.push('<em><span>'+YL2[k]+'</span></em>');
+                  }
+              }
+              html.push('</div>');
+          }
+          html.push('<div class="code2"><a>'+t1.join('</a><a>')+'</a></div></div>');
 		}
+		boll=[];i=0;
+		for(i;i<10;i++){
+			boll.push('<em onclick="cp2y.main.buy(this,'+i+');"></em>');
+		}
+		html.push('<div class="l1"><div class="issu">选号</div><div id="w1" class="code3D ml40">'+boll.join('')+'</div><div id="w2" class="code3D">'+boll.join('')+'</div><div class="code3D" id="w3">'+boll.join('')+'</div><div class="code2" onclick="cp2y.main.submit();">去购买</div></div>');
 		html.push('<div class="splitLine" style="height:'+(26*(D.length+1)-6)+'px;left:290px"></div>');
 		html.push('<div class="splitLine" style="height:'+(26*(D.length+1)-6)+'px;right:331px"></div>');
 		html.push('<canvas id="line3D1" width="250" height="'+25*D.length+'"></canvas>');
@@ -115,6 +120,39 @@ _.a0={
 		ctx.moveTo(((w3[0])*25)+m,12.5);
 		for(i;i<len;i++){ctx.lineTo(w3[i]*25+m,(i*25)+m);}
 		ctx.stroke();
+	},
+	buy:function(o,i){
+		var o=$(o);
+		if(o.children('i').length==0){
+			o.html('<i>'+i+'</i>');
+		}else{
+			o.html('');
+		}
+	},
+	submit:function(){
+		var w1=$("#w1 em"),w2=$("#w2 em"),w3=$("#w3 em"),i=0,ww1=[],ww2=[],ww3=[];
+		for(i;i<10;i++){
+			if(w1.eq(i).html()){
+				ww1.push(i);
+			}
+		}
+		i=0;
+		for(i;i<10;i++){
+			if(w2.eq(i).html()){
+				ww2.push(i);
+			}
+		}
+		i=0;
+		for(i;i<10;i++){
+			if(w3.eq(i).html()){
+				ww3.push(i);
+			}
+		}
+		if( ww1.length==0 && ww2.length==0 && ww3.length==0 ){
+			return false;
+		}else{
+			window.location.href="http://m.cp2y.com/lottery/10025?type=a0&w1="+ww1.join(',')+"&w2="+ww2.join(',')+"&w3="+ww3.join(',');
+		}
 	}
 };
 
