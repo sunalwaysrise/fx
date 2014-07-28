@@ -15,6 +15,42 @@ cp2y.main={
     $("#downLock").hide();
     $("#downBox").hide();
   },
+  open:function(){
+	/**
+	 * check the application is installed
+	 */
+	navigator.startApp.check('com.cp2y.app', function(message) { /* success */
+		console.log(message); // => OK
+	}, 
+	function(error) { /* error */
+		console.log('47', error);
+	});
+	
+	/**
+	 * start application without parameters
+	 */
+	navigator.startApp.start('com.cp2y.app', function(message) { /* success */
+		console.log(message); // => OK
+	}, 
+	function(error) { /* error */
+		console.log('47', error);
+	});
+	
+	/**
+	 * start application with parameters
+	 */
+	navigator.startApp.start([
+		'com.cp2y.app'//, // applucation
+//		'com.teaway.teamenu.MainActivity', // activity
+//		'product_id', // key
+//		'102' // value
+	], function(message) { /* success */
+		console.log(message); // => OK
+	}, 
+	function(error) { /* error */
+		console.log('47', error);
+	});
+  },
   fetchSize:30,
   setSize:function(s){
     this.fetchSize=s;
