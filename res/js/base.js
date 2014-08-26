@@ -4,22 +4,28 @@
 window.scrollTo(0,0);
 try{document.domain='cp2y.com';}catch(e){};
 var WebAppUrl={
-		APP : 'http://t.cp2y.com/',
-		JS_URL:"http://res2.cp2y.com/h5/fx/res/js/play/"
-		//JS_URL:"res/js/play/"
-	},Dom={L:$("#loading"),M:$("#moreLock"),C:$("#moreList"),B:$("#moreBtn"),D:$("#canvas")},cp2y={};
+      APP : 'http://t.cp2y.com/',
+      JS_URL:"http://res2.cp2y.com/h5/fx/res/js/play/"
+      //JS_URL:"res/js/play/"
+  },
+  Dom={
+    I:$("#issue"),S:$("#scroll"),L:$("#loading"),M:$("#moreLock"),C:$("#moreList"),B:$("#moreBtn"),D:$("#canvas")},
+  cp2y={};
 Dom.L.hide();
 cp2y.util={
   version:function(){
-    $.get(WebAppUrl.APP+"/",function(data){
+    $.get(WebAppUrl.APP+"index/version",function(data){
       if(data.flag==1){
         if(data.version!=cp2y.version){
-          return cp2y.dialog.alert('请去下载最新版',function(){
-            location.href='/';
+          return cp2y.dialog.alert(data.versionUpdateMSG,function(){
+            cp2y.util.open('http://m.cp2y.com');
           });
         }
       }
     });
+  },
+  open:function(url){
+    window.location.href=url;
   },
   throttle:function(fn, delay, mustRunDelay) {
     var timer = null;
