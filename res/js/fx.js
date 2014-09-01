@@ -28,7 +28,7 @@ cp2y.main={
     }
     if(!o){
       this.BT=cp2y.util.getArgs('bt');
-      $.getScript(WebAppUrl.JS_URL+this.BT+'.js?v=20140630',function(){
+      $.getScript(WebAppUrl.JS_URL+this.BT+'.js?v=20140830',function(){
         $.extend(cp2y.main,_[play]);
         _.top();
         $("#name").html(_.name);
@@ -100,22 +100,29 @@ cp2y.main={
       autoRunMark=setTimeout('cp2y.main.autoRun()',1000);
     }
   },
-  hide:function(){
-    //$("#choose").hide();
-  },
-  event:function(){
-    //$("#choose").css({"top":$(window).height()-this.y-66}).show();
-    //console.log($(window).height()+this.y);
+  setScroll:function(){
+    if(window.myScroll){
+      if(!window.myScroll2){
+       // window.myScroll2=new IScroll('#scrollBox',{scrollX:false,scrollX:true,click:true,momentum:false,bounce:false ,useTransform:true,useTransition:true,HWCompositing:true});
+        
+        window.myScroll2=new iScroll('scrollBox',{hScrollbar:false,vScrollbar:false,hScroll:true,vScroll:false,bounce:false,useTransition:true});
+        $(window).resize(function(){
+          myScroll2.refresh();
+        });
+      }else{
+        window.myScroll2.refresh();
+      }
+      myScroll.refresh();
+    }
   }
 };
-var myScroll,myScroll2,autoRunMark;
-function loaded(){
-  myScroll = new IScroll('#main',{scrollX:true,scrollX:false});
-  myScroll2 = new IScroll('#scrollBox',{scrollX:false,scrollX:true,click:true});
-  //myScroll.on('scrollStart', cp2y.main.hide);
-  //myScroll.on('scrollEnd', cp2y.main.event);
-}
-
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-document.addEventListener('DOMContentLoaded', loaded, false);
+//window.myScroll = new IScroll('#main',{scrollX:true,scrollX:false,momentum:false,bounce:false,useTransform :true,useTransition:true,HWCompositing:true});
+window.myScroll=new iScroll('main', {hScrollbar:false,vScrollbar:false,hScroll:false,vScroll:true,bounce:false,useTransition:true});
+//var myScroll,myScroll2,autoRunMark;
+//function loaded(){
+//  myScroll = new IScroll('#main',{scrollX:true,scrollX:false,momentum:false,bounce:false,useTransform :true,useTransition:true,HWCompositing:true});
+//  myScroll2 = new IScroll('#scrollBox',{scrollX:false,scrollX:true,click:true,momentum:false,bounce:false ,useTransform:true,useTransition:true,HWCompositing:true});
+//}
+//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+//document.addEventListener('DOMContentLoaded', loaded, false);
 

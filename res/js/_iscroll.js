@@ -126,9 +126,11 @@ var m = Math,
 
 			// Events
 			onRefresh: null,
-			onBeforeScrollStart: function (e) { e.preventDefault(); },
+			onBeforeScrollStart: function (e) { //e.preventDefault(); 
+            },
 			onScrollStart: null,
-			onBeforeScrollMove: null,
+			onBeforeScrollMove: function (e) { e.preventDefault(); 
+            },
 			onScrollMove: null,
 			onBeforeScrollEnd: null,
 			onScrollEnd: null,
