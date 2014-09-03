@@ -3,9 +3,9 @@ var _={
   name:'重庆时时彩',
   top:function(){
     var html=[];
-    html.push('<a onclick="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
-    html.push('<a onclick="cp2y.main.init(\'a1\',this)">三星</a>');
-    html.push('<a onclick="cp2y.main.init(\'a2\',this)">二星</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a1\',this)">三星</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a2\',this)">二星</a>');
     $('#moreBox').html(html.join(''));
   }
 };
@@ -81,7 +81,7 @@ _.a0={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<10;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+i+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+i+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div id="choose" class="xh"><div id="w1">'+boll.join('')+'</div><div id="w2">'+boll.join('')+'</div><div id="w3">'+boll.join('')+'</div><div id="w4">'+boll.join('')+'</div><div id="w5">'+boll.join('')+'</div></div>');
@@ -241,7 +241,7 @@ _.a1={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<10;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+i+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+i+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div id="choose" class="xh"><div id="w1">'+boll.join('')+'</div><div id="w2">'+boll.join('')+'</div><div id="w3">'+boll.join('')+'</div></div>');
@@ -364,7 +364,7 @@ _.a2={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<10;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+i+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+i+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div id="choose" class="xh"><div id="w1" class="code3D">'+boll.join('')+'</div><div id="w2" class="code3D">'+boll.join('')+'</div><div class="code3"></div></div>');

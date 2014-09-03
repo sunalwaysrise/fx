@@ -3,9 +3,9 @@ var _={
   name:'福彩3D',
   top:function(){
       var html=[];
-      html.push('<a onclick="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
-      html.push('<a onclick="cp2y.main.init(\'a1\',this)">跨度</a>');
-      html.push('<a onclick="cp2y.main.init(\'a2\',this)">和值</a>');
+      html.push('<a ontouchstart="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
+      html.push('<a ontouchstart="cp2y.main.init(\'a1\',this)">跨度</a>');
+      html.push('<a ontouchstart="cp2y.main.init(\'a2\',this)">和值</a>');
       $('#moreBox').html(html.join(''));
   }
 };
@@ -76,7 +76,7 @@ _.a0={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<10;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+i+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+i+'</i></em>');
       }
       html.push('<div class="xh"><div id="w1" class="bcl">'+boll.join('')+'</div><div id="w2" class="bcl">'+boll.join('')+'</div><div class="bcl" id="w3">'+boll.join('')+'</div><div class="code2"></div></div>');
       h.push('<div class="issu xh">选号</div>');

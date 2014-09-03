@@ -40,8 +40,8 @@ body{color:#000;font-family:songti,YaHei,microsoft YaHei,Helvetica,Tahoma,sans-s
 .header h2 i.more{height:44px;line-height:44px;display:inline-block;padding-right:20px;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAADICAYAAAAePETBAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAS5SURBVHic7d27bhxVAIfxLwhRIQRFEiPRRvKNCglqwG7IE7iKeDQq2vRc/AIJMTdR0CGKSLlZgcrNpJgdERsLnzM7O/Md8/+klSzv8cx4fp49uzMj+UbXdSRPbyy9Ael8AZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGRFRBZAZEVEFkBkRUQWQGR9eYaP3sHOAK2gF+Br4C/p9ioBnsbuAfsAY+Br4HfRy2p67oxjy+7rjvrzvdH13X7I5fX8mN/9bu/3tlqH1Uv78aIf3B/B/gFeOuS554AnwM/j/rraK994Hvg5iXPna2erzpSxswhR1yOAf2GfQd8OGK5rfVfGNDvo6PahY4BuX3F8wPK/ohlt9JVGENX7at/NQbkt4IxN+k3+DqilGJA2b4615g55B36d1UfFIx9AnxGP+dch2ow/qR/1/WyZgVjjpCXwF3gacHY63Sk7FGO8RT4gkoMGP/B8CfgkDqUvZHrMrQHHFOOccDId5rrfFI/oQ7lmDZRajEOgR/HrmzdUyfXHWUMxsk6K5ziXNaA8qxgbEsotXPG2hgw3cnFE/rXzVIU+5wyYNwqGPuMiTBg2rO9NSi38KLUYhwwEQZMf/q9dZRdFsSAzVwPqZlTTCi79PPbYhiwuQtUj6hH2d3QtpSkwIDNXjGsRTlmGZRajMkm8Mva9CXcAeV5wdglUGrnjEP632ljzXFN/RH9IW5DGTBKTpHPggHz3eRQi7LpOaUG4zkzYcC8d53UoNxmcyg71GEcMBMGzH8bUM2csgmUHfqXRCUGLHNf1g/Uo+xMsF49Bix3o1wtyjHrodRizDZnXGzJOxfnQqmdMw5X27ZIS99KOqC8KBg7BmXA2CoYuzgGLA8C/Q44oByldE6pwXiBAAMcIFCHssXVKNvUYRwgwAAPCEyHsk3/0tYcBrhAoG5OGVC2X/te0xgw7ka5OfoI+AZ4r2DsY+DT1ddNY4AXBOpROuD9grHDBP5w/KZtLjMI9CjfAu9OtDw1BvjmkIs9pH9pOZ1gWXoM8IPANCinNIABbYDAeiinq5/VY0A7INDv0EPqUJrCgLZAAB5QjtIcBrQHAmUozcwZF2sRBP5BuewT/fBu6sGsWzRRrYJAv8M/Ae4Df60e94GPaRQD/B8M/3e1fIRcywIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIisgsgIiKyCyAiIrILICIusVa9AlcSMGZ9MAAAAASUVORK5CYII=');background-position:center right;background-repeat:no-repeat;background-size:contain;transition:.3s}
 .header h2 i.more.cur{transition:.3s;-webkit-transform:rotateX(180deg);-moz-transform:rotateX(180deg);-o-transform: rotateX(180deg);-ms-transform:rotateX(180deg);}
 a.rightBtn{padding:0 5px;color:#fff;height:44px;text-align:center;line-height:44px;position:absolute;top:0;right:0;}
-#moreList{position:fixed;left:0;right:0;top:44px;z-index:11;display:none;background:#fff;}
-#moreBox{padding:10px;overflow:hidden;border-bottom:2px #f9432b solid;box-shadow:0px 1px 2px 2px rgba(0,0,0,.06);}
+#moreList{position:fixed;left:0;right:0;top:44px;z-index:11;display:none;background:#fff;-webkit-transform:translate3d(0,0,0);}
+#moreBox{padding:10px;overflow:hidden;border-bottom:2px #f9432b solid;box-shadow:0px 1px 2px 2px rgba(0,0,0,.06);min-height:40px;}
 #moreBox a{text-align:center;width:88px;color:#444;height:28px;line-height:28px;border:1px #d4d4d4 solid;float:left;position:relative;margin:5px;border-radius:3px;}
 #moreBox a.on{background:#f9432b;color:#fff;border-color:#f9432b;}
 #moreLock,#downLock{position:fixed;bottom:0;left:0;top:44px;right:0;z-index:10;display:none;background:rgba(0,0,0,.2);}
@@ -54,9 +54,9 @@ a.rightBtn{padding:0 5px;color:#fff;height:44px;text-align:center;line-height:44
 .drawList li a img{width:50px;height:50px;float:left;border-radius:25px;}
 .drawList li a span{float:left;margin-left:30px;width:170px;line-height:50px;font-size:18px;}
 
-#main{width:100%;overflow:auto;position:absolute;top:74px;bottom:45px;height:auto;left:0;border-bottom:1px #ddd solid;overflow:hidden;}
-#canvas{position:relative;color:#999;border-top:1px rgb(224, 223, 223) solid;}
-.ssqFx div.l1{height:25px;line-height:24px;position:relative;}
+#main{width:100%;overflow:auto;position:absolute;top:74px;bottom:45px;height:auto;left:0;border-bottom:1px #ddd solid;overflow:hidden;z-index:1;}
+#canvas{position:relative;color:#999;border-top:1px rgb(224, 223, 223) solid;-webkit-transform:translate3d(0,0,0);}
+.ssqFx div.l1{height:25px;line-height:24px;position:relative;-webkit-transform:translate3d(0,0,0); -webkit-backface-visibility:hidden}
 .l1 div{height:24px;float:left;text-align:center;line-height:24px;}
 .l1 .issu2,.l1 .issu{width:39px;left:0;background:#fafafa;z-index:3;}
 .l1 .issu{position:absolute;color:#000;}
@@ -73,7 +73,7 @@ a.rightBtn{padding:0 5px;color:#fff;height:44px;text-align:center;line-height:44
 .l1 div.red{width:825px;border-right:0;overflow:hidden;}
 .l1 div.blue{width:400px;border-right:0;overflow:hidden;}
 .l1 .hz3 em{width:39px;}
-.l1 em{width:24px;height:24px;border-right:1px rgb(224, 223, 223) solid;float:left;font-style:normal;position:relative;z-index:9999;}
+.l1 em{width:24px;height:24px;border-right:1px rgb(224, 223, 223) solid;float:left;font-style:normal;position:relative;z-index:9999;-webkit-transform:translate3d(0,0,0);}
 .l1 em span{color:#666;}
 .l1 em:last-child{border-right:0;}
 .l1 div:last-child{border-right:0;}
@@ -128,7 +128,7 @@ em.unSelc.cur i,.l1 .red em.unSelc.cur i{background:#e50c0c;color:#fff;}
 .l1 .blue em.unSelc2.cur i{background:#2889EA;color:#fff;}
 
 #issue{position:absolute;left:0;top:0;width:40px;}
-#issue div{height:24px;width:39px;border-right:1px rgb(224, 223, 223) solid;float:left;text-align:center;line-height:24px;border-bottom:1px rgb(224, 223, 223) solid;}
+#issue div{height:24px;width:39px;border-right:1px #E0DFDF solid;float:left;text-align:center;line-height:24px;border-bottom:1px #E0DFDF solid;position:relative;-webkit-transform:translate3d(0,0,0); -webkit-backface-visibility:hidden;background:#f0f0f0;}
 .issu2{color:#ff4c34;}
 #scrollBox{width:100%;margin-left:40px;overflow:hidden;}
 #scroll{position:relative;-webkit-backface-visibility:hidden;-webkit-transform-style:preserve-3d;}
@@ -189,6 +189,8 @@ em.unSelc.cur i,.l1 .red em.unSelc.cur i{background:#e50c0c;color:#fff;}
 .xh div{height:24px;float:left;}
 .xh div em{width:25px;height:24px;float:left;font-style:normal;position: relative;z-index: 9999;}
 .xh div em i{width:18px;height:18px;text-align:center;line-height:18px;float:left;margin:2px;border-radius:10px;color:#fff;font-style:normal;position:relative;z-index:999;font-size:13px;background:#fff;border:1px #f72626 solid;color:#f72626;}
+.xh div em.unSelc2 i{background:#fff;border:1px #42b1ff solid;color:#42b1ff;}
+.xh div em.unSelc2.cur i{background:#42b1ff;border:1px #42b1ff solid;color:#fff;}
 
 
 .buy{position:fixed;left:50%;bottom:5px;width:250px;height:36px;margin-left:-125px;text-align:center;line-height:36px;background:rgb(246,69,53);border-radius:5px;color:#fff;}

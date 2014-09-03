@@ -3,9 +3,14 @@ cp2y.main={
   isLock:false,
   toggle:function(){
     if(this.isLock){
-      this.isLock=false;Dom.B.removeClass('cur');Dom.M.hide();Dom.C.hide();
+      this.isLock=false;
+      Dom.B.removeClass('cur');
+      Dom.C.hide();
     }else{
-      this.isLock=true;Dom.B.addClass('cur');Dom.M.show();Dom.C.show();
+      this.isLock=true;
+      Dom.B.addClass('cur');
+      document.getElementById('moreList').style.display="block"; 
+      //document.getElementById('moreLock').style.display="block"; 
     }
   },
   openGuide:function(){
@@ -105,7 +110,7 @@ cp2y.main={
       if(!window.myScroll2){
        // window.myScroll2=new IScroll('#scrollBox',{scrollX:false,scrollX:true,click:true,momentum:false,bounce:false ,useTransform:true,useTransition:true,HWCompositing:true});
         
-        window.myScroll2=new iScroll('scrollBox',{hScrollbar:false,vScrollbar:false,hScroll:true,vScroll:false,bounce:false,useTransition:true});
+        window.myScroll2=new iScroll('scrollBox',{hScrollbar:false,vScrollbar:false,hScroll:true,vScroll:false,bounce:false,useTransition:false});
         $(window).resize(function(){
           myScroll2.refresh();
         });
@@ -117,7 +122,7 @@ cp2y.main={
   }
 };
 //window.myScroll = new IScroll('#main',{scrollX:true,scrollX:false,momentum:false,bounce:false,useTransform :true,useTransition:true,HWCompositing:true});
-window.myScroll=new iScroll('main', {hScrollbar:false,vScrollbar:false,hScroll:false,vScroll:true,bounce:false,useTransition:true});
+window.myScroll=new iScroll('main', {hScrollbar:false,vScrollbar:false,hScroll:false,vScroll:true,bounce:false,useTransition:false});
 //var myScroll,myScroll2,autoRunMark;
 //function loaded(){
 //  myScroll = new IScroll('#main',{scrollX:true,scrollX:false,momentum:false,bounce:false,useTransform :true,useTransition:true,HWCompositing:true});

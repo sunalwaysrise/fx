@@ -3,11 +3,11 @@ var _={
   name:'十一运夺金',
   top:function(){
     var html=[];
-    html.push('<a onclick="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
-    html.push('<a onclick="cp2y.main.init(\'a1\',this)">前三直选</a>');
-    html.push('<a onclick="cp2y.main.init(\'a2\',this)">前二直选</a>');
-    html.push('<a onclick="cp2y.main.init(\'a3\',this)">前三组选</a>');//
-    html.push('<a onclick="cp2y.main.init(\'a4\',this)">前二组选</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a1\',this)">前三直选</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a2\',this)">前二直选</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a3\',this)">前三组选</a>');//
+    html.push('<a ontouchstart="cp2y.main.init(\'a4\',this)">前二组选</a>');
     $('#moreBox').html(html.join(''));
   }
 };
@@ -67,7 +67,7 @@ _.a0={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<11;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div id="choose" class="xh"><div id="w1" class="code11">'+boll.join('')+'</div><div class="code3"></div></div>');
@@ -120,8 +120,8 @@ _.a1={
     tmp=tmp.join('');
     h.push('<div class="issu">期号</div>');
     html.push('<div class="l1 title"><div class="code11 cl1">'+tmp+'</div><div class="code11 cl2">'+tmp+'</div><div class="code11 cl3">'+tmp+'</div><div class="code2 cl6">开奖号码</div></div>');
-    i=0;
-    for(i;i<D.length;i++){
+    i=D.length-1;
+    for(i;i>=0;i--){
       boll=[];
       YL=D[i].miss.split('/');
       t1=D[i].drawNumber.split(',');
@@ -157,7 +157,7 @@ _.a1={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<11;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div class="xh"><div id="w1" class="code11">'+boll.join('')+'</div><div id="w2" class="code11">'+boll.join('')+'</div><div class="code11" id="w3">'+boll.join('')+'</div><div class="code2"></div></div>');
@@ -268,7 +268,7 @@ _.a2={
       YL=D[i].miss.split('/');
       t1=D[i].drawNumber.split(',');
       t1.pop();
-      h.push('<div class="issu">'+D[i].issue.substr(6,3)+'</div>');
+      h.push('<div class="issu issu2">'+D[i].issue.substr(6,3)+'</div>');
       html.push('<div class="l1 ls">');
       j=0;
       w1.push(t1[0]);w2.push(t1[1]);w3.push(t1[2]);
@@ -299,7 +299,7 @@ _.a2={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<11;i++){
-          boll.push('<em class="unSelc" onclick="cp2y.main.buy(this)"><i>'+(i+1).addZero()+'</i></em>');
+          boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this)"><i>'+(i+1).addZero()+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div class="xh"><div id="w1" class="code11">'+boll.join('')+'</div><div id="w2" class="code11">'+boll.join('')+'</div><div class="code2"></div></div>');
@@ -409,7 +409,7 @@ _.a3={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<11;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div class="xh"><div id="w1">'+boll.join('')+'</div></div>');
@@ -486,7 +486,7 @@ _.a4={
     if(!cp2y.flag){
       boll=[];i=0;
       for(i;i<11;i++){
-        boll.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
+        boll.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+(i+1).addZero()+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div class="xh"><div id="w1">'+boll.join('')+'</div></div>');

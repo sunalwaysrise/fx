@@ -3,9 +3,9 @@ var _={
   name:'双色球',
   top:function(){
     var html=[];
-    html.push('<a onclick="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
-    html.push('<a onclick="cp2y.main.init(\'a1\',this)">定位</a>');
-    html.push('<a onclick="cp2y.main.init(\'a2\',this)">和值</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a0\',this)" class="on">基本走势</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a1\',this)">定位</a>');
+    html.push('<a ontouchstart="cp2y.main.init(\'a2\',this)">和值</a>');
     $('#moreBox').html(html.join(''));
   }
 };
@@ -75,11 +75,11 @@ _.a0={
       var red1=[],blue1=[];
       i=1;
       for(i;i<34;i++){
-        red1.push('<em class="unSelc" onclick="cp2y.main.buy(this);"><i>'+i.addZero()+'</i></em>');
+        red1.push('<em class="unSelc" ontouchstart="cp2y.main.buy(this);"><i>'+i.addZero()+'</i></em>');
       }
       i=1;
       for(i;i<17;i++){
-        blue1.push('<em class="unSelc2" onclick="cp2y.main.buy(this);"><i>'+i.addZero()+'</i></em>');
+        blue1.push('<em class="unSelc2" ontouchstart="cp2y.main.buy(this);"><i>'+i.addZero()+'</i></em>');
       }
       h.push('<div class="issu xh">选号</div>');
       html.push('<div class="xh"><div id="red" class="bcl">'+red1.join('')+'</div><div id="blue" class="bcl">'+blue1.join('')+'</div><div class="code cl3"></div></div>');
